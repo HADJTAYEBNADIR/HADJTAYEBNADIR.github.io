@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f7b6d2" />
+  <title>Le Bon Goût | by Kamelia Iabadene</title>
+  <meta name="description" content="Vitrine لحلويات المناسبات: عيد ميلاد، زواج، مناسبات وطنية. by Kamelia Iabadene" />
+
+  <style>
+    :root{
+      --bg0:#0b0b12;
+      --bg1:#101027;
+      --card:#111129cc;
+      --card2:#14143a;
+      --text:#f7f7ff;
+      --muted:#cfd0ffcc;
+      --line:#ffffff1a;
+
+      --p1:#ff4fb7;
+      --p2:#ffcf5a;
+      --p3:#5ad8ff;
+      --p4:#9b5bff;
+
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      --shadow2: 0 10px 28px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Arabic", "Noto Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(255,79,183,.35), transparent 55%),
+        radial-gradient(900px 600px at 95% 15%, rgba(90,216,255,.30), transparent 55%),
+        radial-gradient(800px 600px at 15% 95%, rgba(155,91,255,.22), transparent 55%),
+        radial-gradient(700px 500px at 85% 95%, rgba(255,207,90,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 14px 40px;}
+
+    /* Top bar */
+    .topbar{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(16,16,39,.82), rgba(16,16,39,.55));
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 0;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      position:relative;
+      box-shadow: var(--shadow2);
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.45), transparent 60%),
+        linear-gradient(135deg, rgba(255,79,183,.95), rgba(155,91,255,.95));
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.18);
+      transform: translateZ(0);
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: conic-gradient(from 220deg, rgba(255,207,90,.9), rgba(90,216,255,.85), rgba(255,79,183,.9));
+      filter: blur(18px);
+      opacity:.25;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translate(0,0) rotate(0deg)}
+      50%{transform:translate(6px,-5px) rotate(14deg)}
+    }
+    .brand h1{
+      margin:0;
+      font-size: 15px;
+      line-height: 1.1;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-size: 11.5px;
+      margin-top:2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .actions{
+      display:flex; gap:8px; align-items:center;
+      flex-wrap:nowrap;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      font-size: 12.5px;
+      color: var(--text);
+      user-select:none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .pill:active{transform:scale(.98)}
+    .pill:hover{background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22)}
+    .pill.primary{
+      border:none;
+      background: linear-gradient(135deg, rgba(37,211,102,.95), rgba(17,146,72,.95));
+      box-shadow: 0 18px 40px rgba(37,211,102,.20);
+    }
+    .pill.primary:hover{filter: brightness(1.02)}
+    .iconbtn{
+      width:40px;height:40px;border-radius: 14px;
+      display:grid;place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .iconbtn:hover{background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22)}
+    .iconbtn:active{transform:scale(.98)}
+    .ico{width:18px;height:18px;opacity:.95}
+
+    /* Hero */
+    .hero{
+      padding: 18px 0 8px;
+    }
+    .heroCard{
+      position:relative;
+      border-radius: var(--radius2);
+      padding: 18px 16px;
+      background:
+        radial-gradient(800px 220px at 50% -10%, rgba(255,79,183,.35), transparent 60%),
+        radial-gradient(600px 220px at 95% 40%, rgba(90,216,255,.20), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      transform-style: preserve-3d;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(240px 120px at 18% 25%, rgba(255,207,90,.25), transparent 60%),
+                  radial-gradient(260px 160px at 82% 75%, rgba(155,91,255,.20), transparent 60%);
+      opacity:.8;
+      pointer-events:none;
+    }
+    .heroTitle{
+      margin:0 0 6px 0;
+      font-size: 22px;
+      letter-spacing:.2px;
+      position:relative;
+    }
+    .heroSub{
+      margin:0 0 14px 0;
+      color:var(--muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+      position:relative;
+    }
+    .chips{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      position:relative;
+    }
+    .chip{
+      padding:8px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+    }
+
+    /* Sections */
+    .section{
+      margin-top: 16px;
+    }
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:10px;
+      margin: 0 0 10px 0;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing:.2px;
+    }
+    .sectionHead p{
+      margin:0;
+      color:var(--muted);
+      font-size: 12px;
+    }
+
+    /* Gallery grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .card3d{
+      position:relative;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      transform-style: preserve-3d;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .card3d:hover{
+      border-color: rgba(255,255,255,.22);
+      transform: translateY(-2px);
+    }
+
+    .thumb{
+      height: 190px;
+      position:relative;
+      background: #0f0f22;
+    }
+    .thumb img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .shine{
+      position:absolute; inset:-40%;
+      background: radial-gradient(220px 140px at 30% 20%, rgba(255,255,255,.30), transparent 60%);
+      transform: translate3d(0,0,30px);
+      opacity:.35;
+      pointer-events:none;
+    }
+    .cardBody{
+      padding: 12px 12px 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+    .titleRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .cardTitle{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .tag{
+      padding:6px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .desc{
+      margin:0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .priceRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+    }
+    .price{
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .hint{
+      color: var(--muted);
+      font-size: 11.5px;
+    }
+
+    /* CTA */
+    .cta{
+      margin-top: 16px;
+      border-radius: var(--radius2);
+      padding: 14px 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(255,79,183,.14), rgba(90,216,255,.10));
+      box-shadow: var(--shadow2);
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .cta .txt{
+      min-width: 220px;
+    }
+    .cta h3{
+      margin:0 0 4px 0; font-size: 14.5px;
+    }
+    .cta p{
+      margin:0; color: var(--muted); font-size: 12.5px; line-height: 1.6;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top:1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* Desktop-ish tweaks */
+    @media (min-width: 720px){
+      .brand h1{font-size: 16px}
+      .heroTitle{font-size: 30px}
+      .grid{grid-template-columns: repeat(2, 1fr)}
+      .thumb{height: 210px}
+    }
+    @media (min-width: 1020px){
+      .grid{grid-template-columns: repeat(3, 1fr)}
+      .thumb{height: 220px}
+    }
+
+    /* Accessibility */
+    .sr{position:absolute; width:1px;height:1px; padding:0;margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+    /* Small 3D tilt via JS (mobile safe) */
+    .tilt{will-change: transform}
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand" title="Le Bon Goût">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Le Bon Goût</h1>
+          <small>by Kamelia Iabadene • حلويات المناسبات</small>
+        </div>
+      </div>
+
+      <div class="actions">
+        <!-- عدّل رقم الهاتف هنا -->
+        <a class="pill" href="tel:+213000000000" title="اتصال">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.5 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.2.6.7 0 1.2.5 1.2 1.2V21c0 .7-.5 1.2-1.2 1.2C10.2 22.2 1.8 13.8 1.8 3.2 1.8 2.5 2.3 2 3 2h4.4c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.9.6 4.2.1.4 0 .9-.3 1.2L6.6 10.8Z" stroke="white" stroke-opacity=".9" stroke-width="1.5"/>
+          </svg>
+          <span>اتصال</span>
+        </a>
+
+        <!-- زر واتساب: عدّل الرقم + الرسالة -->
+        <a class="pill primary" id="waBtn" href="#" title="WhatsApp">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.2a9.6 9.6 0 0 0-8.3 14.3L2.7 22l5.7-1.0A9.6 9.6 0 1 0 12 2.2Z" stroke="white" stroke-opacity=".95" stroke-width="1.5"/>
+            <path d="M9.3 7.9c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.2.2-.9.9-.9 2.1s.9 2.5 1 2.6c.2.2 1.7 2.7 4.2 3.7 2.1.9 2.5.7 3 .6.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.4-.2-.8-.4l-1.2-.6c-.4-.2-.7-.2-.9.2-.3.4-.5.7-.7.8-.2.1-.4.1-.8-.1-.4-.2-1.5-.6-2.8-1.9-1-1.1-1.7-2.4-1.9-2.8-.2-.4 0-.6.1-.8l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-.7-1.7Z" fill="white" fill-opacity=".95"/>
+          </svg>
+          <span>واتساب</span>
+        </a>
+
+        <!-- Social icons: عدّل الروابط -->
+        <a class="iconbtn" href="https://instagram.com/" target="_blank" rel="noopener" title="Instagram">
+          <span class="sr">Instagram</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7.2 2.8h9.6A4.4 4.4 0 0 1 21.2 7.2v9.6a4.4 4.4 0 0 1-4.4 4.4H7.2a4.4 4.4 0 0 1-4.4-4.4V7.2a4.4 4.4 0 0 1 4.4-4.4Z" stroke="white" stroke-opacity=".9" stroke-width="1.5"/>
+            <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="white" stroke-opacity=".9" stroke-width="1.5"/>
+            <path d="M17.4 6.6h.01" stroke="white" stroke-opacity=".9" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </a>
+
+        <a class="iconbtn" href="https://facebook.com/" target="_blank" rel="noopener" title="Facebook">
+          <span class="sr">Facebook</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M14 8.7V7.2c0-.8.4-1.2 1.3-1.2h1.5V3h-2.4C12 3 11 4.3 11 6.4v2.3H9v3h2v9h3v-9h2.4l.6-3H14Z" fill="white" fill-opacity=".92"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroCard tilt" data-tilt>
+        <h2 class="heroTitle">حلويات 3D للمناسبات 👑</h2>
+        <p class="heroSub">
+          Vitrine لأعمالنا: عيد ميلاد، زواج، خطوبة، أعياد وطنية… نعرض لك أمثلة من الغاتو مع أسعار تبدأ من… إلى…
+          <br/>اختار التصميم، ابعث صورة/فكرة، ونتكفل بالباقي.
+        </p>
+        <div class="chips">
+          <span class="chip">🎂 عيد ميلاد</span>
+          <span class="chip">💍 زواج/خطوبة</span>
+          <span class="chip">🇩🇿 مناسبات وطنية</span>
+          <span class="chip">✨ تصميم حسب الطلب</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="sectionHead">
+        <h2>أمثلة من الأعمال</h2>
+        <p>الصور مؤقتة—نبدلها بصورك لاحقًا.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card3d tilt" data-tilt>
+          <div class="thumb">
+            <img alt="Gâteau Anniversaire" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'> <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%23ff4fb7'/><stop offset='1' stop-color='%239b5bff'/></linearGradient></defs> <rect width='100%25' height='100%25' fill='url(%23g)'/> <circle cx='260' cy='240' r='170' fill='rgba(255,255,255,0.18)'/> <circle cx='930' cy='520' r='240' fill='rgba(255,255,255,0.12)'/> <text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='54' fill='rgba(255,255,255,0.92)'>Anniversaire</text> <text x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(255,255,255,0.80)'>Remplacez par vos photos</text> </svg>" />
+            <div class="shine"></div>
+          </div>
+          <div class="cardBody">
+            <div class="titleRow">
+              <h3 class="cardTitle">غاتو عيد ميلاد (3D)</h3>
+              <span class="tag">🎂 Birthday</span>
+            </div>
+            <p class="desc">تصميم حسب الطلب: شخصية، رقم، ألوان، رسالة…</p>
+            <div class="priceRow">
+              <div class="price">السعر يبدأ من: 35€ → 90€</div>
+              <div class="hint">حسب الحجم والتفاصيل</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card3d tilt" data-tilt>
+          <div class="thumb">
+            <img alt="Gâteau Mariage" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'> <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%23ffcf5a'/><stop offset='1' stop-color='%235ad8ff'/></linearGradient></defs> <rect width='100%25' height='100%25' fill='url(%23g)'/> <circle cx='340' cy='530' r='260' fill='rgba(0,0,0,0.10)'/> <circle cx='960' cy='260' r='190' fill='rgba(255,255,255,0.18)'/> <text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='54' fill='rgba(15,15,34,0.90)'>Mariage</text> <text x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(15,15,34,0.70)'>Remplacez par vos photos</text> </svg>" />
+            <div class="shine"></div>
+          </div>
+          <div class="cardBody">
+            <div class="titleRow">
+              <h3 class="cardTitle">غاتو زواج/خطوبة</h3>
+              <span class="tag">💍 Wedding</span>
+            </div>
+            <p class="desc">ستايل فاخر، ألوان ناعمة، طبقات متعددة.</p>
+            <div class="priceRow">
+              <div class="price">السعر يبدأ من: 80€ → 250€</div>
+              <div class="hint">حسب عدد الطبقات</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card3d tilt" data-tilt>
+          <div class="thumb">
+            <img alt="Gâteau National" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'> <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%235ad8ff'/><stop offset='1' stop-color='%23ff4fb7'/></linearGradient></defs> <rect width='100%25' height='100%25' fill='url(%23g)'/> <circle cx='260' cy='300' r='220' fill='rgba(0,0,0,0.10)'/> <circle cx='980' cy='560' r='260' fill='rgba(255,255,255,0.12)'/> <text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='54' fill='rgba(255,255,255,0.92)'>Occasion</text> <text x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(255,255,255,0.80)'>Remplacez par vos photos</text> </svg>" />
+            <div class="shine"></div>
+          </div>
+          <div class="cardBody">
+            <div class="titleRow">
+              <h3 class="cardTitle">مناسبات وطنية / حفلات</h3>
+              <span class="tag">🇩🇿 Event</span>
+            </div>
+            <p class="desc">شعارات، ألوان علم، رسائل خاصة للمناسبة.</p>
+            <div class="priceRow">
+              <div class="price">السعر يبدأ من: 45€ → 140€</div>
+              <div class="hint">حسب الفكرة</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card3d tilt" data-tilt>
+          <div class="thumb">
+            <img alt="Mini Cakes" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'> <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%239b5bff'/><stop offset='1' stop-color='%23ffcf5a'/></linearGradient></defs> <rect width='100%25' height='100%25' fill='url(%23g)'/> <circle cx='420' cy='300' r='160' fill='rgba(255,255,255,0.16)'/> <circle cx='860' cy='520' r='220' fill='rgba(0,0,0,0.10)'/> <text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='54' fill='rgba(255,255,255,0.92)'>Mini</text> <text x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(255,255,255,0.80)'>Remplacez par vos photos</text> </svg>" />
+            <div class="shine"></div>
+          </div>
+          <div class="cardBody">
+            <div class="titleRow">
+              <h3 class="cardTitle">ميني غاتو / Cupcakes</h3>
+              <span class="tag">🧁 Mini</span>
+            </div>
+            <p class="desc">قطع صغيرة للحفلات والطاولات، ألوان جميلة.</p>
+            <div class="priceRow">
+              <div class="price">السعر يبدأ من: 20€ → 60€</div>
+              <div class="hint">حسب العدد</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card3d tilt" data-tilt>
+          <div class="thumb">
+            <img alt="Traditional" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'> <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%23ff4fb7'/><stop offset='1' stop-color='%23ffcf5a'/></linearGradient></defs> <rect width='100%25' height='100%25' fill='url(%23g)'/> <circle cx='310' cy='520' r='260' fill='rgba(255,255,255,0.14)'/> <circle cx='940' cy='260' r='190' fill='rgba(0,0,0,0.10)'/> <text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='54' fill='rgba(15,15,34,0.85)'>Tradition</text> <text x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(15,15,34,0.65)'>Remplacez par vos photos</text> </svg>" />
+            <div class="shine"></div>
+          </div>
+          <div class="cardBody">
+            <div class="titleRow">
+              <h3 class="cardTitle">حلويات تقليدية (قبائلية/جزائرية)</h3>
+              <span class="tag">🍯 Trad</span>
+            </div>
+            <p class="desc">تشكيلة للضيافة، نكهات متنوعة وتقديم راقي.</p>
+            <div class="priceRow">
+              <div class="price">السعر يبدأ من: 25€ → 120€</div>
+              <div class="hint">حسب الوزن</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card3d tilt" data-tilt>
+          <div class="thumb">
+            <img alt="Custom Theme" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'> <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%235ad8ff'/><stop offset='1' stop-color='%239b5bff'/></linearGradient></defs> <rect width='100%25' height='100%25' fill='url(%23g)'/> <circle cx='360' cy='300' r='200' fill='rgba(255,255,255,0.14)'/> <circle cx='920' cy='540' r='260' fill='rgba(255,255,255,0.10)'/> <text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='54' fill='rgba(255,255,255,0.92)'>Theme</text> <text x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(255,255,255,0.80)'>Remplacez par vos photos</text> </svg>" />
+            <div class="shine"></div>
+          </div>
+          <div class="cardBody">
+            <div class="titleRow">
+              <h3 class="cardTitle">ثيمات خاصة (حسب صورة)</h3>
+              <span class="tag">✨ Custom</span>
+            </div>
+            <p class="desc">تحب ثيم معين؟ ابعث صورة/فكرة وننفذها.</p>
+            <div class="priceRow">
+              <div class="price">السعر يبدأ من: 40€ → 180€</div>
+              <div class="hint">حسب الديكور</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="txt">
+        <h3>تحب تحجز؟ ابعث الفكرة على واتساب</h3>
+        <p>أرسل: نوع المناسبة + التاريخ + عدد الأشخاص + صورة/ثيم (اختياري).</p>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <a class="pill primary" id="waBtn2" href="#">اطلب الآن على واتساب</a>
+        <a class="pill" href="#gallery">شاهد الأعمال</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Le Bon Goût — by Kamelia Iabadene</div>
+      <div style="opacity:.95">نسخة أولية • نقدر نبدلو الألوان/الصور/الأسعار في أي وقت</div>
+    </footer>
+  </main>
+
+  <script>
+    // ====== عدّل المعلومات هنا بسهولة ======
+    const PHONE = "+213000000000"; // <-- بدّل رقم الهاتف هنا
+    const WHATSAPP_NUMBER = "+213000000000"; // <-- بدّل رقم واتساب هنا
+    const WHATSAPP_MESSAGE = "سلام! حبيت نطلب غاتو من Le Bon Goût. المناسبة: ... التاريخ: ... عدد الأشخاص: ..."; // <-- الرسالة
+
+    // ====== Apply links ======
+    function cleanNumber(n){
+      return (n || "").replace(/\s+/g,"").replace(/[()\-]/g,"");
+    }
+    const wa = "https://wa.me/" + cleanNumber(WHATSAPP_NUMBER).replace(/^\+/,'') + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+
+    document.getElementById("waBtn").href = wa;
+    document.getElementById("waBtn2").href = wa;
+
+    // update tel links
+    document.querySelectorAll('a[href^="tel:"]').forEach(a=>{
+      a.href = "tel:" + cleanNumber(PHONE);
+    });
+
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ====== Simple 3D tilt (lightweight, mobile friendly) ======
+    const tiltEls = document.querySelectorAll("[data-tilt]");
+    const isTouch = matchMedia("(hover: none)").matches;
+
+    function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+
+    tiltEls.forEach(el=>{
+      if(isTouch) return; // على الهاتف نخليه ثابت (أفضل للأداء)
+      el.classList.add("tilt");
+
+      el.addEventListener("mousemove", (e)=>{
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        const rx = clamp((0.5 - py) * 10, -8, 8);
+        const ry = clamp((px - 0.5) * 12, -10, 10);
+        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+      });
+      el.addEventListener("mouseleave", ()=>{
+        el.style.transform = "";
+      });
+    });
+  </script>
+</body>
+</html>
