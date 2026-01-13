@@ -1,31 +1,31 @@
 <!doctype html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Le Bon Goût – Sucré & Salé</title>
-  <meta name="description" content="Vitrine de pâtisserie 3D pour vos événements : anniversaires, mariages, traditions. Devis rapide via Messenger." />
-
-  <!-- Simple favicon (uses emoji if logo not set yet) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍰</text></svg>">
+  <title>Le Bon Goût – Sucré & Salé | by Kamelia Iabadene</title>
+  <meta name="description" content="Vitrine de créations pâtissières (3D) pour vos événements : anniversaires, mariages, traditions kabyles. Devis rapide via Messenger / WhatsApp." />
 
   <style>
     :root{
-      --bg0:#070812;
-      --bg1:#0b0c1a;
-      --card: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.14);
-      --txt: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
+      --bg:#0b0d14;
+      --bg2:#0f1322;
+      --card:#12172a;
+      --card2:#0f1426;
+      --txt:#e9ecff;
+      --muted:#a8b0d8;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --shadow2: 0 10px 22px rgba(0,0,0,.35);
+      --r:18px;
 
-      --p1:#ff4fd8;
-      --p2:#7c5cff;
-      --p3:#22d3ee;
-      --p4:#ffd166;
-
-      --shadow: 0 20px 70px rgba(0,0,0,.55);
-      --shadow2: 0 10px 30px rgba(0,0,0,.35);
-      --r: 22px;
+      --pink:#ff4fd8;
+      --violet:#7c5cff;
+      --cyan:#36d8ff;
+      --gold:#ffd166;
+      --kabyle:#ff3b30;
+      --kabyle2:#ffd60a;
+      --kabyle3:#0b0d14;
     }
 
     *{box-sizing:border-box}
@@ -35,654 +35,574 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--txt);
       background:
-        radial-gradient(1200px 700px at 15% 15%, rgba(255,79,216,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 20%, rgba(124,92,255,.18), transparent 55%),
-        radial-gradient(1000px 700px at 40% 90%, rgba(34,211,238,.14), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        radial-gradient(900px 450px at 18% 10%, rgba(124,92,255,.18), transparent 55%),
+        radial-gradient(900px 450px at 85% 18%, rgba(54,216,255,.14), transparent 55%),
+        radial-gradient(900px 450px at 50% 110%, rgba(255,79,216,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
     }
 
-    /* soft animated blobs */
-    .blob{
-      position:absolute; inset:auto;
-      width:320px; height:320px; border-radius:50%;
-      filter: blur(40px);
-      opacity:.25;
-      animation: floaty 9s ease-in-out infinite;
-      transform: translateZ(0);
-      pointer-events:none;
-    }
-    .b1{left:-90px; top:80px; background: conic-gradient(from 30deg, var(--p1), var(--p2), var(--p3), var(--p1));}
-    .b2{right:-120px; top:220px; width:420px;height:420px; animation-duration: 12s; background: conic-gradient(from 180deg, var(--p4), var(--p2), var(--p1), var(--p4));}
-    .b3{left:15%; bottom:-140px; width:520px;height:520px; animation-duration: 14s; background: conic-gradient(from 90deg, var(--p3), var(--p2), var(--p4), var(--p3));}
-
-    @keyframes floaty{
-      0%,100%{transform: translateY(0) translateX(0) scale(1)}
-      50%{transform: translateY(-22px) translateX(14px) scale(1.05)}
-    }
-
-    .wrap{
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 18px 14px 70px;
-      position:relative;
-      z-index:1;
-    }
-
-    /* Top bar */
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:16px}
     .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      position:sticky;
-      top:10px;
-      z-index:5;
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,13,20,.70);
+      border-bottom:1px solid var(--line);
+    }
+    .top{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding:12px 0;
     }
 
-    .glass{
-      background: rgba(10,10,20,.55);
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow2);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 999px;
-    }
-
+    /* Brand */
     .brand{
-      display:flex; align-items:center; gap:12px;
-      padding: 10px 14px;
-      min-height:56px;
+      display:flex; gap:12px; align-items:center; min-width:0;
     }
-
     .logo{
-      width:42px; height:42px; border-radius:50%;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 14px 30px rgba(0,0,0,.35), 0 0 0 4px rgba(255,255,255,.06) inset;
+      width:52px; height:52px; border-radius:16px;
+      background: linear-gradient(135deg, rgba(255,79,216,.18), rgba(54,216,255,.12));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow2);
       overflow:hidden;
-      transform-style:preserve-3d;
-      animation: logoPulse 2.8s ease-in-out infinite;
-      display:grid; place-items:center;
+      transform: translateZ(0);
     }
-    .logo img{width:100%;height:100%;object-fit:cover; display:block;}
-    .logo .fallback{font-size:22px; opacity:.95}
-    @keyframes logoPulse{
-      0%,100%{transform: translateY(0) rotateY(0deg)}
-      50%{transform: translateY(-2px) rotateY(14deg)}
-    }
-
-    .brandTxt{line-height:1.05}
-    .brandTxt .name{
+    .logo img{width:100%; height:100%; object-fit:cover; display:block}
+    .brandText{min-width:0}
+    .title{
       font-weight:900;
       letter-spacing:.2px;
-      font-size: 15px;
-      text-shadow: 0 10px 30px rgba(0,0,0,.45);
+      line-height:1.05;
+      font-size:15px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
-    .brandTxt .sub{
-      margin-top:4px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .by{
-      margin-top:4px;
-      font-size: 12px;
-      color: rgba(255,255,255,.80);
-      display:flex;
+    .subtitle{
+      display:flex; gap:8px; flex-wrap:wrap;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:12px;
       align-items:center;
-      gap:8px;
     }
-    .by .chip{
-      padding:4px 10px;
+    .chip{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:6px 10px;
       border-radius:999px;
-      background: linear-gradient(135deg, rgba(255,79,216,.22), rgba(34,211,238,.18));
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      transform: translateZ(0);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
     }
 
-    /* action buttons */
+    /* Kabyle tiny band */
+    .kabyleBand{
+      width:54px; height:8px; border-radius:999px;
+      background: linear-gradient(90deg, var(--kabyle) 0 33%, var(--kabyle2) 33% 66%, #2ee59d 66% 100%);
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    /* Actions */
     .actions{
-      display:flex; align-items:center; gap:10px;
-      padding: 8px 10px;
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
     }
     .btn{
-      appearance:none; border:0;
-      color:var(--txt);
-      font-weight:800;
-      font-size: 13px;
-      padding: 10px 12px;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
       border-radius:999px;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      position:relative;
-      transform-style:preserve-3d;
-      transition: transform .18s ease, filter .18s ease;
-      user-select:none;
-    }
-    .btn:active{transform: translateY(1px) scale(.99)}
-    .btnPrimary{
-      background: linear-gradient(135deg, rgba(255,79,216,.95), rgba(124,92,255,.92));
-      box-shadow: 0 18px 45px rgba(255,79,216,.18);
-    }
-    .btnGhost{
-      background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow2);
+      font-weight:700;
+      font-size:13px;
+      user-select:none;
+      transform-style:preserve-3d;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      position:relative;
+      overflow:hidden;
     }
-    .btn:hover{transform: translateY(-2px) rotateX(2deg) rotateY(-2deg)}
-    .ico{
-      width:18px; height:18px;
-      display:inline-grid; place-items:center;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
-      animation: wiggle 3.2s ease-in-out infinite;
-      transform-origin:center;
+    .btn:hover{transform: translateY(-2px) scale(1.01)}
+    .btn:active{transform: translateY(0px) scale(.99)}
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(255,79,216,.22), rgba(124,92,255,.18));
+      border-color: rgba(255,79,216,.30);
     }
-    .btn:nth-child(1) .ico{animation-delay:.1s}
-    .btn:nth-child(2) .ico{animation-delay:.35s}
-    .btn:nth-child(3) .ico{animation-delay:.55s}
-
-    @keyframes wiggle{
-      0%,100%{transform: translateY(0) rotate(0deg) scale(1)}
-      40%{transform: translateY(-2px) rotate(-10deg) scale(1.06)}
-      60%{transform: translateY(1px) rotate(12deg) scale(1.06)}
+    .btnIcon{
+      width:28px; height:28px; border-radius:12px;
+      display:grid; place-items:center;
+      background: rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.12);
+      transform: translateZ(12px);
+    }
+    /* “Game-ish” 3D wobble for icons */
+    .wobble{
+      animation: wobble 2.4s ease-in-out infinite;
+    }
+    .wobble2{animation: wobble 2.8s ease-in-out infinite}
+    .wobble3{animation: wobble 3.1s ease-in-out infinite}
+    @keyframes wobble{
+      0%,100%{transform: translateZ(12px) rotate(0deg)}
+      50%{transform: translateZ(12px) rotate(-4deg)}
     }
 
     /* Hero */
     .hero{
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: var(--r);
-      border:1px solid rgba(255,255,255,.12);
+      margin-top:16px;
+      border:1px solid var(--line);
+      border-radius: calc(var(--r) + 6px);
       background:
-        radial-gradient(800px 240px at 20% 0%, rgba(255,79,216,.22), transparent 55%),
-        radial-gradient(780px 260px at 90% 10%, rgba(34,211,238,.16), transparent 55%),
-        rgba(255,255,255,.04);
+        radial-gradient(800px 250px at 20% 0%, rgba(255,79,216,.12), transparent 60%),
+        radial-gradient(800px 250px at 85% 20%, rgba(54,216,255,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       box-shadow: var(--shadow);
-      position:relative;
+      padding:18px;
       overflow:hidden;
-      transform-style:preserve-3d;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: linear-gradient(90deg, rgba(255,79,216,.10), rgba(124,92,255,.08), rgba(34,211,238,.10));
-      filter: blur(24px);
-      opacity:.45;
-      pointer-events:none;
-    }
-    .heroInner{
       position:relative;
+    }
+    .heroGrid{
       display:grid;
-      gap:12px;
+      grid-template-columns: 1fr;
+      gap:14px;
     }
-    .kTag{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius:999px;
-      background: rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.12);
-      width:fit-content;
+    .heroH{
+      font-size:22px;
+      line-height:1.15;
+      margin:0;
+      font-weight:950;
     }
-    .kTag b{
-      background: linear-gradient(135deg, var(--p4), var(--p1));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-      letter-spacing:.2px;
+    .heroP{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .heroBadges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .badge{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.20);
+      padding:10px 12px;
+      border-radius:14px;
+      font-size:13px;
+      display:inline-flex; align-items:center; gap:10px;
+      transform-style:preserve-3d;
+      box-shadow: var(--shadow2);
+    }
+    .badge b{
+      display:inline-block;
+      transform: translateZ(14px);
+      font-weight:900;
     }
 
-    h1{
-      margin:0;
-      font-size: 24px;
-      line-height:1.15;
-      letter-spacing:.2px;
-      text-shadow: 0 22px 70px rgba(0,0,0,.45);
-    }
-    .lead{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height:1.55;
-      max-width: 62ch;
-    }
-    .heroCtas{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 4px;
-    }
-    .pill{
-      padding: 9px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      font-weight:800;
-      font-size: 12px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      transition: transform .18s ease;
-    }
-    .pill:hover{transform: translateY(-2px)}
-    .spark{
-      width:10px;height:10px;border-radius:50%;
-      background: var(--p3);
-      box-shadow: 0 0 0 6px rgba(34,211,238,.12), 0 0 25px rgba(34,211,238,.35);
-      animation: pulse 1.9s ease-in-out infinite;
-    }
-    @keyframes pulse{
-      0%,100%{transform: scale(1); opacity:.9}
-      50%{transform: scale(1.15); opacity:1}
+    .heroCTA{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
     }
 
     /* Sections */
     .section{
-      margin-top: 18px;
+      margin-top:18px;
       display:grid;
       gap:12px;
     }
-    .secHead{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:12px;
-      margin-top: 18px;
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
     }
-    .secTitle{
+    .sectionTitle h2{
       margin:0;
-      font-size: 16px;
-      font-weight: 950;
+      font-size:16px;
+      font-weight:950;
       letter-spacing:.2px;
     }
-    .secHint{
-      margin:0;
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .smallNote{color:var(--muted); font-size:12px}
 
+    /* Cards / categories */
     .grid{
       display:grid;
       grid-template-columns: 1fr;
       gap:12px;
     }
-    @media (min-width: 860px){
-      .grid{grid-template-columns: repeat(3, 1fr);}
-      h1{font-size: 32px}
-      .lead{font-size: 15px}
-      .brandTxt .name{font-size:16px}
-    }
-
     .card{
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(420px 220px at 20% 0%, rgba(255,255,255,.09), transparent 60%),
-        rgba(255,255,255,.05);
-      box-shadow: 0 18px 60px rgba(0,0,0,.38);
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow2);
       overflow:hidden;
       transform-style:preserve-3d;
-      transition: transform .2s ease, box-shadow .2s ease;
-      position:relative;
     }
-    .card:hover{
-      transform: translateY(-4px) rotateX(2deg) rotateY(-2deg);
-      box-shadow: 0 22px 70px rgba(0,0,0,.55);
+    .cardHead{
+      padding:14px 14px 12px;
+      display:flex; justify-content:space-between; gap:12px; align-items:flex-start;
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-    .banner{
-      padding: 14px;
-      background:
-        linear-gradient(135deg, rgba(255,79,216,.18), rgba(124,92,255,.12), rgba(34,211,238,.14));
-      border-bottom:1px solid rgba(255,255,255,.10);
-      min-height: 110px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      gap:6px;
+    .cardHead .left{
+      min-width:0;
     }
-    .banner .k{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size: 12px;
-      font-weight: 900;
-      color: rgba(255,255,255,.88);
+    .catTitle{
+      font-weight:950;
+      margin:0;
+      font-size:14px;
+      display:flex; gap:10px; align-items:center;
     }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.22);
+    .catTitle .pill{
+      font-size:12px;
+      padding:5px 10px;
+      border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
-      width: fit-content;
-      font-weight: 900;
-      font-size: 12px;
+      background: rgba(0,0,0,.18);
+      color:var(--muted);
     }
-    .cardBody{
-      padding: 12px 14px 14px;
-      display:grid;
-      gap:10px;
+    .catDesc{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
     }
     .price{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap:10px;
-      font-size: 13px;
-      color: var(--muted);
+      font-weight:950;
+      font-size:13px;
+      white-space:nowrap;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
     }
-    .price b{
-      color: var(--txt);
-      font-size: 14px;
-    }
-    .thumbs{
+
+    /* 3D gallery tiles */
+    .tiles{
+      padding:12px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:8px;
-    }
-    .thumb{
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      overflow:hidden;
-      position:relative;
-      aspect-ratio: 1 / 1;
-      transform-style:preserve-3d;
-      transition: transform .18s ease;
-    }
-    .thumb:hover{transform: translateY(-2px) rotateX(2deg) rotateY(2deg)}
-    .thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      filter: saturate(1.06) contrast(1.02);
-    }
-    .ph{
-      width:100%; height:100%;
-      display:grid; place-items:center;
-      font-size: 12px;
-      color: rgba(255,255,255,.70);
-      padding:10px;
-      text-align:center;
-      background:
-        radial-gradient(120px 120px at 30% 30%, rgba(255,79,216,.16), transparent 60%),
-        radial-gradient(120px 120px at 70% 70%, rgba(34,211,238,.12), transparent 60%),
-        rgba(255,255,255,.04);
-    }
-
-    .miniCtas{
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .miniLink{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: var(--txt);
-      text-decoration:none;
-      font-weight: 900;
-      font-size: 13px;
-      transition: transform .18s ease;
-    }
-    .miniLink:hover{transform: translateY(-2px)}
-    .miniLink small{color:var(--muted); font-weight:800}
-
-    footer{
-      margin-top: 26px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-size: 12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
       gap:10px;
-      flex-wrap:wrap;
     }
-    .kabyleNote{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 8px 12px;
-      border-radius: 999px;
+    .tile{
+      aspect-ratio: 1 / 1;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 10px 18px rgba(0,0,0,.35);
+      position:relative;
+      transform-style:preserve-3d;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .tile:hover{
+      transform: translateY(-4px) rotateX(4deg) rotateY(-4deg);
+      box-shadow: 0 18px 38px rgba(0,0,0,.55);
+    }
+    .tile img{width:100%; height:100%; object-fit:cover; display:block}
+    .tile .tag{
+      position:absolute; left:10px; bottom:10px;
+      background: rgba(0,0,0,.55);
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+      padding:6px 8px;
+      border-radius:12px;
+      font-size:11px;
+      color:var(--txt);
+      transform: translateZ(20px);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Footer */
+    footer{
+      margin:20px 0 10px;
+      padding:14px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (min-width: 820px){
+      .wrap{padding:18px}
+      .heroGrid{
+        grid-template-columns: 1.2fr .8fr;
+        align-items:stretch;
+      }
+      .heroH{font-size:30px}
+      .grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tiles{grid-template-columns: repeat(4, 1fr)}
+      .title{font-size:16px}
+      .logo{width:58px; height:58px}
+    }
+
+    /* Soft floating dots (simple, not heavy) */
+    .floatDot{
+      position:absolute; inset:auto;
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(255,255,255,.10);
+      filter: blur(.2px);
+      animation: float 6s ease-in-out infinite;
+      pointer-events:none;
+    }
+    @keyframes float{
+      0%,100%{transform: translateY(0px)}
+      50%{transform: translateY(-10px)}
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      .wobble,.wobble2,.wobble3,.floatDot{animation:none}
+      .tile:hover{transform:none}
+      .btn:hover{transform:none}
     }
   </style>
 </head>
 
 <body>
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
-  <div class="blob b3"></div>
-
-  <div class="wrap">
-    <!-- TOP BAR -->
-    <div class="topbar">
-      <div class="glass brand">
-        <div class="logo" aria-label="Logo">
-          <!-- Put your logo here: upload logo.png to repo -->
-          <img src="logo.png" alt="Le Bon Goût logo" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;fallback&quot;>🍰</div>';">
-        </div>
-        <div class="brandTxt">
-          <div class="name">Le Bon Goût – Sucré & Salé</div>
-          <div class="sub">Vitrine de créations • Événements • Sur commande</div>
-          <div class="by">
-            <span class="chip">by Kamelia Iabadene</span>
-            <span style="opacity:.85">•</span>
-            <span style="opacity:.92">Kabylie 💛💚💙</span>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <div class="logo" title="Logo">
+            <!-- ضع logo.png في نفس المكان -->
+            <img src="logo.png" alt="Le Bon Goût – Sucré & Salé" onerror="this.style.display='none'">
+          </div>
+          <div class="brandText">
+            <div class="title">Le Bon Goût – Sucré & Salé</div>
+            <div class="subtitle">
+              <span class="chip"><span class="kabyleBand" aria-hidden="true"></span> Kabylie • Touch Amazigh</span>
+              <span class="chip"><b style="transform:none">by</b> <span id="byName">Kamelia Iabadene</span></span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="glass actions">
-        <!-- Messenger Devis -->
-        <button class="btn btnPrimary" onclick="openMessenger()" title="Demander un devis sur Messenger">
-          <span class="ico">💬</span> Devis
-        </button>
+        <div class="actions">
+          <a class="btn btnPrimary" id="btnDevis" href="https://m.me/" target="_blank" rel="noopener">
+            <span class="btnIcon wobble" aria-hidden="true">💬</span>
+            Devis
+          </a>
 
-        <!-- Facebook -->
-        <a class="btn btnGhost" href="https://www.facebook.com/share/1HkunEg1Wh/" target="_blank" rel="noopener">
-          <span class="ico">📘</span> Facebook
-        </a>
+          <a class="btn" id="btnFacebook" href="https://www.facebook.com/share/1HkunEg1Wh/" target="_blank" rel="noopener">
+            <span class="btnIcon wobble2" aria-hidden="true">📘</span>
+            Facebook
+          </a>
 
-        <!-- WhatsApp placeholder -->
-        <button class="btn btnGhost" onclick="openWhatsApp()" title="WhatsApp (ajouter le numéro plus tard)">
-          <span class="ico">🟢</span> WhatsApp
-        </button>
+          <!-- WhatsApp: خلي الرقم تضيفه انت لاحقاً -->
+          <a class="btn" id="btnWhatsApp" href="#" target="_blank" rel="noopener">
+            <span class="btnIcon wobble3" aria-hidden="true">🟢</span>
+            WhatsApp
+          </a>
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="heroInner">
-        <div class="kTag">
-          <span class="spark"></span>
-          <span>Créations <b>3D</b> pour vos événements</span>
-        </div>
+  <main class="wrap">
+    <section class="hero">
+      <span class="floatDot" style="top:18px; left:18px; animation-delay:.2s"></span>
+      <span class="floatDot" style="top:34px; right:22px; width:14px; height:14px; animation-delay:.8s"></span>
+      <span class="floatDot" style="bottom:20px; left:46%; width:12px; height:12px; animation-delay:1.1s"></span>
 
-        <h1>Gâteaux personnalisés • Anniversaires • Mariages • Traditions</h1>
-        <p class="lead">
-          Une vitrine moderne pour présenter des exemples de réalisations. Les prix ci-dessous sont indicatifs
-          et varient selon le thème, la taille et les détails. Contact rapide via <b>Messenger</b>.
-        </p>
-
-        <div class="heroCtas">
-          <span class="pill"><span class="ico">✨</span> Design mobile-first</span>
-          <span class="pill"><span class="ico">🧁</span> Sucré & Salé</span>
-          <span class="pill"><span class="ico">🧿</span> Touch Kabyle / Amazigh</span>
-          <span class="pill"><span class="ico">⚡</span> Animations 3D</span>
-        </div>
-
-        <div class="miniCtas" style="margin-top:8px;">
-          <a class="miniLink" href="#categories"><span class="ico">🎯</span> Voir les catégories</a>
-          <a class="miniLink" href="#contact"><span class="ico">📩</span> Contacter <small>(Messenger)</small></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CATEGORIES -->
-    <div class="secHead" id="categories">
-      <div>
-        <p class="secTitle">Exemples de réalisations</p>
-        <p class="secHint">On classe par type — vous pourrez ajouter plus d’images après.</p>
-      </div>
-      <div class="kabyleNote">ⵣ Inspiration Kabyle • Tradition • Modernité</div>
-    </div>
-
-    <section class="grid section">
-      <!-- Anniversaire -->
-      <article class="card">
-        <div class="banner">
-          <div class="badge">🎂 Anniversaire (3D)</div>
-          <div class="k">Thèmes enfants • Foot • Super-héros</div>
-        </div>
-        <div class="cardBody">
-          <div class="price">
-            <span>Prix à partir de</span>
-            <b>6 500 – 12 000 DA</b>
-          </div>
-          <div class="thumbs">
-            <div class="thumb">
-              <img src="images/anniversaire-ilyane.jpg" alt="Anniversaire Ilyane (foot)" onerror="this.replaceWith(ph('Ajouter image Anniversaire 1'));">
-            </div>
-            <div class="thumb">
-              <img src="images/anniversaire-spiderman.jpg" alt="Anniversaire Spiderman" onerror="this.replaceWith(ph('Ajouter image Anniversaire 2'));">
-            </div>
-            <div class="thumb">
-              <img src="images/anniversaire-mini.jpg" alt="Anniversaire mini" onerror="this.replaceWith(ph('Ajouter image Anniversaire 3'));">
-            </div>
-          </div>
-          <button class="btn btnPrimary" onclick="openMessenger()" style="justify-content:center;">
-            <span class="ico">💬</span> Demander un devis
-          </button>
-        </div>
-      </article>
-
-      <!-- Mariage -->
-      <article class="card">
-        <div class="banner">
-          <div class="badge">💍 Mariage / Fiançailles</div>
-          <div class="k">Élégant • Chic • Détails premium</div>
-        </div>
-        <div class="cardBody">
-          <div class="price">
-            <span>Prix à partir de</span>
-            <b>18 000 – 45 000 DA</b>
-          </div>
-          <div class="thumbs">
-            <div class="thumb">
-              <img src="images/mariage-chocolat.jpg" alt="Gâteau chocolat" onerror="this.replaceWith(ph('Ajouter image Mariage 1'));">
-            </div>
-            <div class="thumb">
-              <img src="images/mariage-message.jpg" alt="Ma chère femme" onerror="this.replaceWith(ph('Ajouter image Mariage 2'));">
-            </div>
-            <div class="thumb">
-              <img src="images/mariage-luxe.jpg" alt="Mariage luxe" onerror="this.replaceWith(ph('Ajouter image Mariage 3'));">
-            </div>
-          </div>
-          <button class="btn btnPrimary" onclick="openMessenger()" style="justify-content:center;">
-            <span class="ico">💬</span> Demander un devis
-          </button>
-        </div>
-      </article>
-
-      <!-- Tradition Kabyle -->
-      <article class="card">
-        <div class="banner">
-          <div class="badge">🧿 Tradition Kabyle / Amazigh</div>
-          <div class="k">Assegas ameggaz • Symboles • Tenues</div>
-        </div>
-        <div class="cardBody">
-          <div class="price">
-            <span>Prix à partir de</span>
-            <b>9 000 – 22 000 DA</b>
-          </div>
-          <div class="thumbs">
-            <div class="thumb">
-              <img src="images/tradition-assegas.jpg" alt="Assegas ameggaz" onerror="this.replaceWith(ph('Ajouter image Tradition 1'));">
-            </div>
-            <div class="thumb">
-              <img src="images/tradition-robe.jpg" alt="Tenue kabyle" onerror="this.replaceWith(ph('Ajouter image Tradition 2'));">
-            </div>
-            <div class="thumb">
-              <img src="images/tradition-symboles.jpg" alt="Symboles amazigh" onerror="this.replaceWith(ph('Ajouter image Tradition 3'));">
-            </div>
-          </div>
-          <button class="btn btnPrimary" onclick="openMessenger()" style="justify-content:center;">
-            <span class="ico">💬</span> Demander un devis
-          </button>
-        </div>
-      </article>
-    </section>
-
-    <!-- CONTACT -->
-    <div class="secHead" id="contact" style="margin-top:8px;">
-      <div>
-        <p class="secTitle">Contact rapide</p>
-        <p class="secHint">Cliquez et envoyez votre thème + nombre de parts + date.</p>
-      </div>
-    </div>
-
-    <section class="card" style="margin-top:12px;">
-      <div class="cardBody">
-        <div style="display:grid; gap:10px;">
-          <div class="badge">📩 Réponse rapide sur Messenger</div>
-          <p class="lead" style="margin:0;">
-            Dites-moi : <b>Type d’événement</b> • <b>Thème</b> • <b>Nombre de parts</b> • <b>Date</b> • <b>Ville</b>.
-            Je vous envoie un devis en détail.
+      <div class="heroGrid">
+        <div>
+          <p class="badge" style="margin:0; width:max-content">
+            <span aria-hidden="true">✨</span>
+            <b>Créations 3D</b> pour vos événements
           </p>
 
-          <div class="miniCtas">
-            <button class="btn btnPrimary" onclick="openMessenger()"><span class="ico">💬</span> Ouvrir Messenger</button>
-            <a class="btn btnGhost" href="https://www.facebook.com/share/1HkunEg1Wh/" target="_blank" rel="noopener">
-              <span class="ico">📘</span> Page Facebook
-            </a>
-            <button class="btn btnGhost" onclick="openWhatsApp()"><span class="ico">🟢</span> WhatsApp (à ajouter)</button>
+          <h1 class="heroH" style="margin-top:12px">
+            Gâteaux personnalisés<br/>
+            Anniversaires · Mariages · Traditions kabyles
+          </h1>
+
+          <p class="heroP">
+            Une vitrine claire et moderne pour montrer des exemples de réalisations.
+            Les prix ci-dessous sont indicatifs et varient selon le thème, la taille et les détails.
+          </p>
+
+          <div class="heroBadges">
+            <span class="badge"><span aria-hidden="true">📱</span> <b>Mobile-first</b> (simple & lisible)</span>
+            <span class="badge"><span aria-hidden="true">🧿</span> <b>Style Kabyle</b> (touch discret)</span>
+            <span class="badge"><span aria-hidden="true">⚡</span> <b>Animations</b> légères & claires</span>
           </div>
 
-          <div class="kabyleNote">ⵣ “Assegas ameggaz” • Créations inspirées de la Kabylie</div>
+          <div class="heroCTA">
+            <a class="btn btnPrimary" href="https://www.facebook.com/share/1HkunEg1Wh/" target="_blank" rel="noopener">
+              <span class="btnIcon wobble" aria-hidden="true">📩</span>
+              Demander un devis
+            </a>
+            <a class="btn" href="#galerie">
+              <span class="btnIcon wobble2" aria-hidden="true">🍰</span>
+              Voir la galerie
+            </a>
+          </div>
+
+          <p class="heroP" style="margin-top:12px; font-size:12px">
+            Contact rapide via Messenger / WhatsApp.
+          </p>
+        </div>
+
+        <div>
+          <div class="card" style="height:100%">
+            <div class="cardHead">
+              <div class="left">
+                <p class="catTitle" style="margin:0">
+                  <span aria-hidden="true">🏷️</span> Tarifs indicatifs
+                  <span class="pill">DA</span>
+                </p>
+                <p class="catDesc">Des prix simples. On ajuste selon votre demande.</p>
+              </div>
+              <div class="price">À partir de 6 500 DA</div>
+            </div>
+
+            <div style="padding:12px; display:grid; gap:10px">
+              <div class="badge" style="justify-content:space-between">
+                <span>🎂 Anniversaire (3D)</span>
+                <b>6 500 – 12 000 DA</b>
+              </div>
+              <div class="badge" style="justify-content:space-between">
+                <span>💍 Mariage</span>
+                <b>25 000 – 60 000 DA</b>
+              </div>
+              <div class="badge" style="justify-content:space-between">
+                <span>🧿 Tradition Kabyle</span>
+                <b>8 500 – 30 000 DA</b>
+              </div>
+
+              <div class="badge" style="opacity:.92">
+                <span aria-hidden="true">ℹ️</span>
+                <span>
+                  <b>Note :</b> le prix dépend du thème, du nombre de parts et des détails.
+                </span>
+              </div>
+
+              <a class="btn btnPrimary" href="https://www.facebook.com/share/1HkunEg1Wh/" target="_blank" rel="noopener" style="justify-content:center">
+                <span class="btnIcon wobble" aria-hidden="true">💬</span>
+                Contacter (Messenger)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galerie">
+      <div class="sectionTitle">
+        <h2>Galerie (exemples)</h2>
+        <div class="smallNote">Vous pourrez ajouter plus d’images après.</div>
+      </div>
+
+      <div class="grid">
+        <!-- ANNIVERSAIRE -->
+        <div class="card">
+          <div class="cardHead">
+            <div class="left">
+              <p class="catTitle"><span aria-hidden="true">🎂</span> Anniversaire (3D) <span class="pill">Enfants • Foot • Super-héros</span></p>
+              <p class="catDesc">Idéal pour prénoms, thèmes, figurines, effets 3D.</p>
+            </div>
+            <div class="price">Dès 6 500 DA</div>
+          </div>
+          <div class="tiles">
+            <!-- صورك: كرة القدم + سبايدرمان -->
+            <div class="tile"><img src="https://i.imgur.com/placeholder1.jpg" alt="" style="display:none"><img src="https://images.unsplash.com/photo-1606755962773-d324e1f0b5b0?q=80&w=800&auto=format&fit=crop" alt="Anniversaire 1"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?q=80&w=800&auto=format&fit=crop" alt="Anniversaire 2"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=800&auto=format&fit=crop" alt="Anniversaire 3"><span class="tag">À remplacer</span></div>
+          </div>
+          <div style="padding:0 12px 12px; color:var(--muted); font-size:12px">
+            👉 <b>À faire :</b> Remplacer ces 3 images par vos photos “Anniversaire”.
+          </div>
+        </div>
+
+        <!-- MARIAGE -->
+        <div class="card">
+          <div class="cardHead">
+            <div class="left">
+              <p class="catTitle"><span aria-hidden="true">💍</span> Mariage <span class="pill">Élégant • Moderne</span></p>
+              <p class="catDesc">Finitions propres, couleurs douces, détails raffinés.</p>
+            </div>
+            <div class="price">Dès 25 000 DA</div>
+          </div>
+          <div class="tiles">
+            <div class="tile"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=800&auto=format&fit=crop" alt="Mariage 1"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800&auto=format&fit=crop" alt="Mariage 2"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=800&auto=format&fit=crop" alt="Mariage 3"><span class="tag">À remplacer</span></div>
+          </div>
+          <div style="padding:0 12px 12px; color:var(--muted); font-size:12px">
+            👉 <b>À faire :</b> Remplacer par vos photos “Mariage”.
+          </div>
+        </div>
+
+        <!-- TRADITION KABYLE -->
+        <div class="card">
+          <div class="cardHead">
+            <div class="left">
+              <p class="catTitle"><span aria-hidden="true">🧿</span> Tradition Kabyle <span class="pill">Amazigh • Symboles</span></p>
+              <p class="catDesc">Motifs kabyles, couleurs traditionnelles, touche Amazigh.</p>
+            </div>
+            <div class="price">Dès 8 500 DA</div>
+          </div>
+          <div class="tiles">
+            <div class="tile"><img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=800&auto=format&fit=crop" alt="Tradition 1"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1600617953089-3b5c4a3b90b1?q=80&w=800&auto=format&fit=crop" alt="Tradition 2"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1600335895229-6e75511892c8?q=80&w=800&auto=format&fit=crop" alt="Tradition 3"><span class="tag">À remplacer</span></div>
+          </div>
+          <div style="padding:0 12px 12px; color:var(--muted); font-size:12px">
+            👉 <b>À faire :</b> هنا ضع صور “Tradition Kabyle” (مثال: Assegas ameggaz…).
+          </div>
+        </div>
+
+        <!-- SUCRÉ & SALÉ (قسم عام) -->
+        <div class="card">
+          <div class="cardHead">
+            <div class="left">
+              <p class="catTitle"><span aria-hidden="true">🍩</span> Sucré & Salé <span class="pill">Sur commande</span></p>
+              <p class="catDesc">Mini gâteaux, box, salé… حسب الطلب.</p>
+            </div>
+            <div class="price">Devis</div>
+          </div>
+          <div class="tiles">
+            <div class="tile"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800&auto=format&fit=crop" alt="Sucré 1"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?q=80&w=800&auto=format&fit=crop" alt="Sucré 2"><span class="tag">À remplacer</span></div>
+            <div class="tile"><img src="https://images.unsplash.com/photo-1542826438-6b51c22f1b33?q=80&w=800&auto=format&fit=crop" alt="Salé 3"><span class="tag">À remplacer</span></div>
+          </div>
+          <div style="padding:0 12px 12px; color:var(--muted); font-size:12px">
+            👉 <b>À faire :</b> ضع هنا صور salé / box / mini.
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <div>© <span id="y"></span> Le Bon Goût – Sucré & Salé</div>
-      <div>by Kamelia Iabadene • Vitrine web</div>
+      <div>© <span id="y"></span> Le Bon Goût – Sucré & Salé • by Kamelia Iabadene</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="chip" href="https://www.facebook.com/share/1HkunEg1Wh/" target="_blank" rel="noopener">📘 Facebook</a>
+        <a class="chip" href="#" id="footerWA">🟢 WhatsApp</a>
+        <a class="chip" href="#galerie">🍰 Galerie</a>
+      </div>
     </footer>
-  </div>
+  </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // سنة
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Messenger: open Facebook page in a "message" intent (best effort)
-    function openMessenger(){
-      // If you later give me the exact Messenger username/link, I’ll lock it perfectly.
-      // For now: open the Facebook share link (user can click Message from there).
-      window.open("https://www.facebook.com/share/1HkunEg1Wh/", "_blank");
-    }
+    // WhatsApp placeholder: كي تعطيني الرقم نركّبو
+    // مثال: const wa = "https://wa.me/213XXXXXXXXX";
+    const wa = ""; // <- خلّيها فارغة الآن
+    const waBtns = [document.getElementById('btnWhatsApp'), document.getElementById('footerWA')];
+    waBtns.forEach(b=>{
+      if(!b) return;
+      if(wa){
+        b.href = wa;
+      }else{
+        b.href = "javascript:void(0)";
+        b.style.opacity = .65;
+        b.title = "WhatsApp: ajouter le numéro بعد";
+        b.onclick = ()=>alert("WhatsApp غير مضاف بعد. عطيني الرقم ونركّب الرابط.");
+      }
+    });
 
-    // WhatsApp placeholder: you will add the number later
-    function openWhatsApp(){
-      alert("WhatsApp: أرسل لي الرقم تاع الواتساب (مع كود الجزائر +213) باش نركّبو الرابط مباشرة ✅");
-    }
-
-    // placeholder block generator
-    function ph(txt){
-      const d = document.createElement("div");
-      d.className = "ph";
-      d.textContent = txt;
-      return d;
-    }
+    // Devis: خليته يروح لفيسبوك (Messenger) عبر الرابط اللي عطيتني
+    // إذا عندك رابط m.me مباشر لاحقاً نبدلوه.
+    const devis = document.getElementById('btnDevis');
+    devis.href = "https://www.facebook.com/share/1HkunEg1Wh/";
   </script>
 </body>
 </html>
